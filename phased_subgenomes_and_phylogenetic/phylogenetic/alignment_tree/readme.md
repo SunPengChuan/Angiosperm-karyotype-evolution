@@ -35,4 +35,4 @@ Only genes that had a collinear relationship in all three ANA species and at lea
 
 We used WGDI with the parameter '-at' and ASTRAL to constructed phylogenetic tree. this file is the parameter of '-at'.
 
-all.pep all.cds ： These two files are files that merge the corresponding sequences of the species involved through the 'c:at' command.
+all.pep all.cds ： These two files are files that merge the corresponding sequences of the species involved through the 'cat' command.
