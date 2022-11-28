@@ -39,6 +39,14 @@ all.pep all.cds ： These two files are files that merge the corresponding seque
 
 
 
+freqQuad.csv 
+
+We can get this file with the '-t 16' parameter in ASTRAL 5.7.7. We get q1, q2 and q3 based on the last two columns in this file.
+
+
+
+
+
 add_Aquilegia coerulea_Euryale ferox.csv
 
 The order of species has changed.
