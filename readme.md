@@ -8,11 +8,9 @@ The previous approaches for karyotype reconstruction define contiguous ancestral
 
 ###### Karyotype evolution model and uniqueness of chromosomal fusions
 
-Three basic chromosomal fusions comprise reciprocally translocated chromosome arms (RTA), end-end joining (EEJ) and nested chromosome fusion (NCF) (Fig.1). Chromosome translocations include reciprocal translocation and Robertsonian translocation, which correspond to RTA and EEJ, respectively. The NCF pattern is also widely recognized and used (Celebrating Mendel, McClintock, and Darlington: On end-to-end chromosome fusions and nested chromosome fusions. The Plant Cell. doi: 10.1093/plcell/koac116, 2022).
+Three basic chromosomal fusions comprise reciprocally translocated chromosome arms (RTA), end-end joining (EEJ) and nested chromosome fusion (NCF) (Fig.1). Chromosome translocations include reciprocal translocation and Robertsonian translocation, which correspond to RTA and EEJ, respectively. The NCF pattern is also widely recognized and used.
 
 ![Karyotype evolution model](figures/Karyotype%20evolution%20model.png)
-
-[Figure 1]:  Three basic chromosomal fusion
 
 Although chromosomal structural variations occur frequently in genomes, the probability seems to be very low that the positions of protochromosome fusion happen to overlap with the breakpoints of further structural variations at the later evolutionary stage. Therefore, such fusion positions could be accurate to infer whether two lineages share the same ancestor or not. Similarly, the inversion often occurs during chromosomal evolution, it is nearly impossible to disrupt the positions of protochromosome fusion. So, inversions have little effect on karyotype reconstruction.
 
@@ -20,13 +18,15 @@ Chromosomal fission usually refers to when one protochromosome breaks into two o
 
 ###### Basic steps for construction of ancestral chromosome karyotype and karyotypic evolution
 
-Four steps were undertaken to construct the ancestral karyotype(Fig.2a-b). First, identifying chromosome-like ‘synteny blocks’ and small synteny blocks across all sampled genomes. Second, exploring the shared ‘synteny block’ with telomeres (chromosome-like) and the intact chromosome across extant genomes and extracting the most intact of these (for example, one chromosome) as one protochromosome. Third, deleting this shared block and its syntenic small blocks across all extant genomes and connecting the remaining parts together as ‘entire chromosomes’. Fourth, starting one more round of ‘synteny exploration’ to extract all protochromosomes until no genomic block was left for each extant genome.
+<div style="display:flex">
+  <img src="figures/method1.png" style="width:50%">
+  <img src="figures/method2.png" style="width:50%">
+</div>
 
-<img src="./figures/Fig2.png" alt="Fig2" style="zoom: 50%;" />
+The spiral process consists of (i) identification of chromosome-like synteny blocks (CLSBs) by comparisons of all sampled genomes; (ii) extraction of the most intact CLSBs as protochromosomes, with automatic adding of telomeres at their ends; and (iii) removal of identified protochromosomes and connection of the flanking parts, followed by the next rounds of ‘protochromosome exploration’ until no genomic block is left in any of the sampled genomes. 
 
-[Figure 2]: According to the three basic chromosomal fusion types (a), one outlined identification of protochromosomes based on the shared chromosomes or chromosome-like syntenic blocks across the highly diverged lineages (b) and determination of the phylogenetic relationships and karyotypic evolution for the common ancestor (c).
+Karyotypes with the same chromosomal fusion positions are used to infer evolutionary relationships following five steps: Records of all CLSBs (1), fusion positions based on the number of homologs within the gap between two protochromosomes (2), the karyotypic composition of protochromosomes in each extant genome (3), the same fusion positions across species, (4) and karyotypic changes that parsimoniously lead from a common ancestor to its descendants (5). All of these processes can be performed automatically using the WGDI toolkit.
 
-All protochromosomes of the ancestral karyotype are compared with each extant genome and the karyotypic composition from the protochromosomes is determined. According to fusion and fission positions between protochromosomes of the ancestral karyotype and chromosomes of the current species, the karyotypic changes and phylogenetic relationships are inferred (Fig. 2c).
 
 ### Karyotype reconstruction demonstration
 
