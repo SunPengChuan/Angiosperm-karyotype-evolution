@@ -5,6 +5,7 @@ Correspondence between species name abbreviations
 | species                    | abbreviations    |
 | -------------------------- | --------- |
 | Amborella trichopoda       | atr42s    |
+| Brasenia schreberi         | bsc1s     |
 | Nymphaea colorata          | nc476s    |
 | Illicium verum             | ive       |
 | Vitis vinifera             | vvi161s   |
@@ -27,9 +28,9 @@ Correspondence between species name abbreviations
 | Selaginella moellendorffii | smo62s    |
 | Physcomitrium patens       | ppt60s    |
 | Dendrobium_chrysotoxum     | dch50s    |
-| Euryale ferox              | ef3s      |
+| Euryale frox               | ef3s      |
 | Oryza sativa               | os53s     |
 | Zostera marina             | zma82s    |
 | Musa acuminata             | mac41s    |
-| Ananas bracteatus          | aco47s    | 
+| Ananas bracteatus          | abr7s     | 
 | spirodela intermedia       | sin10s    |
