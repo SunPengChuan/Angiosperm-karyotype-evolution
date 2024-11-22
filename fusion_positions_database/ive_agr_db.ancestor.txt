@@ -1,0 +1,8 @@
+O1	1	100	red	1
+O1	101	200	blue	1
+B1	1	100	red	1
+B1	101	200	blue	1
+B5	1	100	red	1
+B5	101	200	blue	1
+O2	1	100	red	1
+O2	101	200	blue	1

@@ -1,0 +1,8 @@
+O4	1	100	red	1
+O4	101	200	blue	1
+E3	1	100	red	1
+E3	101	200	blue	1
+P3	1	36	red	1
+P3	37	136	blue	1
+O5	1	100	red	1
+O5	101	200	blue	1
