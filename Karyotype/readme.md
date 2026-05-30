@@ -1,13 +1,32 @@
+# Ancestral Karyotypes
 
-The following words correspond to the abbreviated file names
+This directory contains reconstructed ancestral karyotypes used as references for collinearity-based comparative genomics.
 
-Ancestral angiosperm karyotype (AAK)
-Ancestral Mesangiospermae karyotype (AMAK)
-Ancestral monocot karyotype except for Acoraceae (AMK-A)
-Ancestral eudicot karyotypes (AEK)
+## Karyotype folders
 
-Each ancestor karyotype folder contains four files: ancestor, gff, lens, and pep. The ancestor file mainly records the correspondence between chromosomes and colors, while the gff and pep files provide information about genes. The lens file specifies the number of genes in each chromosome for genome analysis.
+| Abbreviation | Full name |
+|--------------|-----------|
+| AAK   | Ancestral Angiosperm Karyotype |
+| AMAK  | Ancestral Mesangiospermae Karyotype |
+| AMK-A | Ancestral Monocot Karyotype (except Acoraceae) |
+| AEK   | Ancestral Eudicot Karyotype |
 
-The ancestor file is used to record the chromosome information of genome assembly by distinguishing different chromosomes with different colors. The gff file contains annotation information about the genome, including gene location and length. The pep file provides protein sequence information corresponding to genes. These files can help researchers better understand the composition and structure of the genome and conduct gene annotation, comparative analysis, and other research work. Therefore, they are essential foundational data for genome researchers.
+## Files in each folder
 
-The main objective of this ancestral gene set is to provide information about collinearity between different ancestral chromosomes, rather than to serve as a comprehensive collection of genes. This data can be valuable for understanding the evolutionary history and structure of the genome.
+Each karyotype folder contains four files:
+
+- **ancestor**: chromosome–color correspondence, used to distinguish chromosomes in visualizations.
+- **gff**: gene annotations, including chromosome, position, and length of each gene.
+- **lens**: number of genes per chromosome, used for genome analysis.
+- **pep**: protein sequences for the annotated genes.
+
+## Purpose and usage
+
+The goal of these ancestral gene sets is to provide collinearity information between ancestral and modern chromosomes, not to serve as a comprehensive gene catalog.
+
+Each ancestral chromosome is built from a specific chromosome or region of an extant species. The set is then used to identify collinear blocks in modern species. Because the role of these genes is purely as anchors for collinearity, the set is not fixed and can be adjusted, for example:
+
+- Expanding the genes within a collinear block to improve coverage in modern species.
+- Replacing an ancestral chromosome with a homologous chromosome from another species when it gives a cleaner mapping.
+
+The ultimate criterion for validating an ancestral karyotype is the location of chromosome fusion points, i.e., specific chromosomal regions in extant genomes, rather than the reconstructed ancestral gene set itself.

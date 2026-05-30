@@ -1,6 +1,6 @@
 # Angiosperm Karyotype Evolution
 
-This repository contains the data and code associated with our study on ancestral karyotype reconstruction in angiosperms. It includes genome data for 30+ species, reconstructed ancestral karyotypes, a fusion positions database, and step-by-step construction workflows using the [WGDI](https://github.com/SunPengChuan/wgdi) toolkit.
+This repository contains the data and code associated with our study on ancestral karyotype reconstruction in angiosperms. It includes genome data for 30+ species, reconstructed ancestral karyotypes, a fusion points database, and step-by-step construction workflows using the [WGDI](https://github.com/SunPengChuan/wgdi) toolkit.
 
 ## Repository Structure
 
@@ -8,9 +8,8 @@ This repository contains the data and code associated with our study on ancestra
 |-----------|-------------|
 | `genome/` | Genome data (gff, lens, cds, pep) for all sampled species |
 | `Karyotype/` | Reconstructed ancestral karyotypes: AAK, AEK, AMAK, AMK-A |
-| `fusion_positions_database/` | Chromosomal fusion positions database |
-| `AAK_construction/` | Step-by-step workflow and intermediate files for AAK construction |
-| `dotplot/` | Dotplot figures comparing pairwise genome synteny |
+| `fusion_points_database/` | Chromosomal fusion points database — 49 gene sets, each capturing one fusion event observed in an extant species, used to validate ancestral karyotype reconstructions |
+| `AAK_construction/` | Step-by-step workflow and intermediate files for AAK construction (includes pairwise dotplots) |
 | `figures/` | Figures used in the paper |
 
 ## Ancestral Karyotypes
@@ -26,16 +25,16 @@ Four ancestral karyotypes are reconstructed and provided in `Karyotype/`:
 
 Each karyotype folder contains four files:
 
-- `.ancestor` — chromosome-to-color mapping for visualization
+- `.ancestor.txt` — chromosome-to-color mapping for visualization
 - `.gff` — gene annotation (location and length)
-- `.lens` — gene count per chromosome
+- `.lens` — chromosome length and gene count per chromosome
 - `.pep.fa` — protein sequences
 
 > Note: the ancestral gene sets are intended to represent collinearity between ancestral chromosomes, not as comprehensive gene catalogs.
 
 ## Genome Data
 
-Species included (abbreviations used in filenames):
+A subset of the species used in this study is listed below (abbreviations match the filenames in `genome/`). This is a partial list; the full set is documented in [`genome/readme.md`](genome/readme.md).
 
 | Species | Abbreviation |
 |---|---|
@@ -51,6 +50,7 @@ Species included (abbreviations used in filenames):
 | *Vitis vinifera* | vvi161s |
 | *Aquilegia coerulea* | ac472s |
 | *Acorus gramineus* | agr8s |
+| *Acorus americanus* | aam1s |
 | *Asparagus setaceus* | ase9s |
 | *Acanthochlamys bracteata* | abr7s |
 | *Ananas comosus* | aco40s |
@@ -67,12 +67,22 @@ Species included (abbreviations used in filenames):
 | *Azolla filiculoides* | afi61s |
 | *Selaginella moellendorffii* | smo62s |
 | *Physcomitrium patens* | ppt60s |
+| *Trithuria bibracteata* | tau2s |
+| *Theobroma cacao* | tc180s |
+| *Arabidopsis thaliana* | at600s |
 
 ## Usage
 
-All analyses depend on the [WGDI](https://github.com/SunPengChuan/wgdi) toolkit. A detailed reconstruction walkthrough is available at [wgdi-example](https://github.com/SunPengChuan/wgdi-example/).
+All analyses depend on the [WGDI](https://github.com/SunPengChuan/wgdi) toolkit.
 
 The [`AAK_construction/commond.md`](AAK_construction/commond.md) file documents the full step-by-step process used to build the AAK, including WGDI commands and intermediate dotplot checkpoints.
+
+### Related resources
+
+- [karyotype-phylogenomics-simulator](https://github.com/SunPengChuan/karyotype-phylogenomics-simulator) — automated simulator for karyotype evolution
+- [Karyotype_Evolution.md](https://github.com/SunPengChuan/wgdi-example/blob/main/Karyotype_Evolution.md) — minimal worked example of karyotype reconstruction
+- [Shared_fusion_positions.md](https://github.com/SunPengChuan/wgdi-example/blob/main/Shared_fusion_positions.md) — worked example of using shared fusion points
+- [wgdi-example](https://github.com/SunPengChuan/wgdi-example/) — additional WGDI walkthroughs
 
 ## Citation
 
@@ -97,15 +107,17 @@ The spiral workflow consists of three iterative steps:
 2. Extract the most intact CLSBs as protochromosomes, adding telomeres at their ends
 3. Remove identified protochromosomes and connect flanking regions, then repeat until no genomic block remains
 
-**Three basic chromosomal fusion types** are recognized:
+**Three basic inter-chromosomal rearrangement types** are recognized:
 
-- **RCT** — Reciprocal chromosome translocated
-- **EEJ** — End-end joining (Robertsonian translocation)
+- **RCT** — Reciprocal chromosome translocation
+- **EEJ** — End-to-end joining (Robertsonian translocation)
 - **NCF** — Nested chromosome fusion
+
+Compound and mixed events are denoted with parentheses or `mix`, e.g. `(1_9/RCT)_6/EEJ` (chromosomes 1 and 9 first joined by RCT, then end-joined with chromosome 6) and `1_4_13/mix` for complex multi-chromosome rearrangements.
 
 ![Karyotype evolution model](figures/Karyotype%20evolution%20model.png)
 
-Fusion positions are highly specific: the probability that a later structural variation breakpoint coincides with a protochromosome fusion site is extremely low, making fusion positions reliable phylogenetic markers. Inversions similarly have little effect on karyotype reconstruction.
+Fusion points are highly specific: the probability that a later structural variation breakpoint coincides with a protochromosome fusion point is extremely low, making fusion points reliable phylogenetic markers. Inversions similarly have little effect on karyotype reconstruction.
 
 ### Applications
 

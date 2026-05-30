@@ -16,6 +16,7 @@ Correspondence between species name abbreviations
 | Liriodendron chinense      | lc2s      |
 | Aristolochia fimbriata     | afi49s    |
 | Acorus gramineus           | agr8s     |
+| Acorus americanus          | aam1s     |
 | Elaeis guineensis          | elg3s     |
 | Asparagus setaceus         | ase9s     |
 | Acanthochlamys bracteata   | abr7s     |
