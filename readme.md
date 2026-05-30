@@ -10,7 +10,7 @@ This repository contains the data and code associated with our study on ancestra
 | `Karyotype/` | Reconstructed ancestral karyotypes: AAK, AEK, AMAK, AMK-A |
 | `fusion_points_database/` | Chromosomal fusion points database — 49 gene sets, each capturing one fusion event observed in an extant species, used to validate ancestral karyotype reconstructions |
 | `AAK_construction/` | Step-by-step workflow and intermediate files for AAK construction (includes pairwise dotplots) |
-| `figures/` | Figures used in the paper |
+| `figures/` | Related figures referenced in this repository |
 
 ## Ancestral Karyotypes
 
